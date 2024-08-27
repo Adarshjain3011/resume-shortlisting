@@ -1,29 +1,22 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css';
-
-import {Route,Routes} from "react-router-dom";
-
+import { Route, Routes } from 'react-router-dom';
 import Linkedin from './auth/linkedin/callback';
 
+import Home from './component/Home';
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Add a component for the root path if needed */}
+        <Route path="/auth/linkedin/callback" element={<Linkedin />} />
+      </Routes>
+    </div>
+  );
+}
 
-        <div>
+export default App;
 
-            hellow sir 
-
-        </div>
-
-        <Routes>
-
-            <Route element={<Linkedin></Linkedin>} path='/auth/linkedin/callback'></Route>
-
-        </Routes>
-    </>
-  )
-}s
-
-export default App
